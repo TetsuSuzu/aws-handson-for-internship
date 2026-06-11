@@ -46,7 +46,7 @@ var bedrockUrl      = "https://xxxxxxxxxx.execute-api.ap-northeast-1.amazonaws.c
 
 ## Step 3 — 動作確認
 
-1. ローカルサーバーを起動して `http://localhost:8000` を開く
+1. Codespaces のサーバーを起動し、ポート 8000 の転送URLを開く（Session1 と同じ）
 2. **「あなたの好きな食事は？」** セクションのテキスト欄に入力する
    - 例：`長野でおすすめの食事を教えて`
 3. **「おすすめを表示」** ボタンをクリック
@@ -85,7 +85,7 @@ $.ajax({
 | 「未設定です」と出る | `bedrockUrl` に URL を貼り、保存したか確認 |
 | `error` と出る | URL が正しいか確認。事務局に API が稼働中か確認 |
 | 反応が返ってこない | 生成AIの応答に時間がかかることがある。数十秒待っても返らなければ再試行 |
-| CORS エラー | `http://localhost:8000` などローカルサーバーで開いているか確認 |
+| CORS エラー | ポート転送URL（`...app.github.dev`）などサーバー経由で開いているか確認 |
 
 ---
 

@@ -1,11 +1,14 @@
-# Session0 — 環境セットアップ
+# Session0 — 環境セットアップ（GitHub Codespaces）
 
 **Session1 に進む前に、この手順を完了してください。**
-ここでは「自分のリポジトリを用意 → PC に取り込む → ローカルでサイトを開く」までを行います。
+このコースでは **GitHub Codespaces**（ブラウザ上の開発環境）を使います。
+PC に VS Code・Python・Git を **インストールする必要はありません**。
 
 ```
-事務局リポジトリ ──Fork──▶ 自分のGitHubリポジトリ ──clone/DL──▶ 自分のPC ──ローカルサーバー──▶ ブラウザ
+事務局リポジトリ ──Fork──▶ 自分のGitHubリポジトリ ──Codespacesを起動──▶ ブラウザ上のVS Codeで編集・実行
 ```
+
+> Codespaces なら、ブラウザだけで「コードの編集」も「ローカルサーバーの起動」もできます。
 
 ---
 
@@ -27,76 +30,60 @@
 以降、みなさんは自分のコピーを自由に編集します。
 
 1. 事務局から案内されたリポジトリのページを開く
-   （例：`https://github.com/<事務局>/AWS-HANDSON-FOR-LEARNER`）
-2. 右上の **「Fork」** ボタンをクリック
-3. 「Create fork」をクリック
-4. `https://github.com/<自分のユーザー名>/AWS-HANDSON-FOR-LEARNER` ができれば成功
+2. 右上の **「Fork」** ボタンをクリック → 「Create fork」をクリック
+3. `https://github.com/<自分のユーザー名>/<リポジトリ名>` ができれば成功
 
 > これ以降の作業は、**必ず自分の Fork したリポジトリ** で行ってください。
 
 ---
 
-## Step 3 — PC に取り込む
+## Step 3 — Codespaces を起動する
 
-### 方法A：ZIP でダウンロード（Git をまだ知らない人向け）
+1. 自分の Fork したリポジトリのページで、緑色の **「Code」** ボタンをクリック
+2. **「Codespaces」** タブを選ぶ
+3. **「Create codespace on master」** をクリック
 
-1. 自分の Fork したリポジトリで、緑色の **「Code」** ボタンをクリック
-2. **「Download ZIP」** をクリック
-3. ダウンロードした ZIP を **デスクトップ** などに展開する
+しばらく待つと、ブラウザの中に **VS Code（開発画面）** が立ち上がります。
+左側のファイル一覧に `web/` や `Session0〜4/` が見えれば成功です。
 
-> ⚠️ ZIP 方式だと、編集内容を GitHub に戻す（push する）には Step 4 の Git が必要です。
-> Session4 の自動公開まで進む人は **方法B（clone）** を推奨します。
+> ⏳ 初回の起動は1〜2分かかります。
+> 2回目以降は「Code」→「Codespaces」タブから、前回の Codespace を再開できます。
 
-### 方法B：git clone（推奨）
+### 💡 Codespaces とは
 
-1. [Git](https://git-scm.com/downloads) をインストール
-2. ターミナル（Windows は PowerShell）で以下を実行：
+GitHub が用意するクラウド上の開発環境です。みなさんの Fork したリポジトリが
+そのまま入っており、ブラウザ上の VS Code で編集・実行できます。
+保存・コミットした内容は自分のリポジトリに反映されます。
 
-```bash
-git clone https://github.com/<自分のユーザー名>/AWS-HANDSON-FOR-LEARNER.git
-cd AWS-HANDSON-FOR-LEARNER
-```
-
-> `<自分のユーザー名>` は自分の GitHub ユーザー名に置き換えてください。
+> ⚠️ 無料枠（個人アカウントで月60時間目安）があります。
+> 使い終わったら、左下のメニューや「Code」→「Codespaces」から **Stop** しておくと節約できます。
 
 ---
 
 ## Step 4 — ローカルサーバーでサイトを開く
 
-Web サイトは、ファイルをダブルクリックするだけでも開けますが、
-API 連携（Session2/3）を正しく動かすため、**ローカルサーバー**で開きます。
+Codespaces の中で Web サーバーを起動し、サイトを表示します。
 
-### Python を使う場合（推奨）
+1. 画面上部メニュー **「Terminal」→「New Terminal」** で、下部にターミナルを開く
+2. 次のコマンドを実行する：
 
-取り込んだフォルダの中で、以下を実行します。
+   ```bash
+   cd web
+   python -m http.server 8000
+   ```
 
-**Windows（PowerShell）:**
-```powershell
-cd web
-py -m http.server 8000
-```
+   > Codespaces には Python が最初から入っています。
+   > 8000 番が使われている場合は `8080` など別の番号でも構いません。
 
-**Mac / Linux:**
-```bash
-cd web
-python3 -m http.server 8000
-```
+3. 右下に **「ポート 8000 で使用できるアプリケーション…ブラウザで開く」** の通知が出ます。
+   **「ブラウザで開く（Open in Browser）」** をクリックすると、新しいタブでサイトが開きます。
 
-実行したまま、ブラウザで次のURLを開きます：
+   - 通知が消えてしまった場合は、ターミナル横の **「ポート（PORTS）」** タブを開き、
+     ポート `8000` の **「ローカルアドレス」** の地球儀アイコンをクリックします。
 
-```
-http://localhost:8000
-```
-
-> 8000 番が使われている場合は `8080` など別の番号でも構いません（例：`py -m http.server 8080` → `http://localhost:8080`）。
+> 開いたサイトのURLは `https://<英数字>-8000.app.github.dev` のような形になります。
+> これが Codespaces 版の「ローカルサーバー」です（PC の `localhost:8000` に相当します）。
 > サーバーを止めるときは、ターミナルで `Ctrl + C` を押します。
-
-### Python が入っていない場合（VS Code の Live Server）
-
-1. [VS Code](https://code.visualstudio.com/) をインストール
-2. 拡張機能 **「Live Server」** をインストール
-3. `web/index.html` を開き、右下の **「Go Live」** をクリック
-4. ブラウザが自動で開きます（例：`http://127.0.0.1:5500/web/index.html`）
 
 ---
 
@@ -119,6 +106,7 @@ http://localhost:8000
 
 | 配布物 | 用途 |
 |---|---|
+| Fork 元リポジトリの URL | Step 2 |
 | 会員登録 API のエンドポイント URL | Session2 |
 | AIおすすめ API のエンドポイント URL | Session3 |
 

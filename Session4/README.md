@@ -79,6 +79,9 @@ jobs:
 ## Step 3 — 変更して push する
 
 `web/index.html` か `web/styles.css` を少し編集して、GitHub に push します。
+Codespaces は最初から自分のリポジトリに接続・認証済みなので、そのまま push できます。
+
+Codespaces のターミナルで：
 
 ```bash
 git add web/
@@ -86,7 +89,8 @@ git commit -m "サイトを更新（GitHub Actions の動作確認）"
 git push origin master
 ```
 
-> ZIP でダウンロードした人は、ここで一度 [Session0](../Session0/README.md) の **方法B（git clone）** に切り替えてください。
+> ターミナルが苦手な人は、左の **「ソース管理（Source Control）」** アイコンからでもOKです。
+> 変更ファイルの「＋」でステージ → メッセージを入力して **「Commit」** → **「Sync Changes」** で push できます。
 
 ---
 

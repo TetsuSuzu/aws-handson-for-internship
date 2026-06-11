@@ -58,12 +58,12 @@ var registrationUrl = "https://xxxxxxxxxx.execute-api.ap-northeast-1.amazonaws.c
 
 ## Step 3 — 動作確認
 
-1. ローカルサーバーを起動（Session1 と同じ）
-   ```powershell
+1. Codespaces のターミナルでサーバーを起動（Session1 と同じ）
+   ```bash
    cd web
-   py -m http.server 8000
+   python -m http.server 8000
    ```
-2. ブラウザで `http://localhost:8000` を開く
+2. ポート 8000 の転送URL（`https://<英数字>-8000.app.github.dev`）をブラウザで開く
 3. **「新規会員募集」** セクションのフォームに入力する：
 
    | 項目 | 入力例 |
@@ -108,7 +108,7 @@ $.ajax({
 | 「未設定です」と出る | `registrationUrl` に URL を貼り、保存したか確認 |
 | 「登録に失敗しました」 | URL が正しいか・末尾に `/` があるか確認。事務局に API が稼働中か確認 |
 | ボタンを押しても無反応 | ブラウザの開発者ツール（F12）→「Console」でエラーを確認 |
-| CORS エラーが出る | `http://localhost:8000` のように **ローカルサーバー**で開いているか確認（ファイルを直接ダブルクリックしていないか） |
+| CORS エラーが出る | ポート転送URL（`...app.github.dev`）など **サーバー経由**で開いているか確認。事務局の API がそのオリジンを許可しているか確認 |
 
 ---
 
