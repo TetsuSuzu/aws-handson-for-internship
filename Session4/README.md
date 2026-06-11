@@ -20,7 +20,7 @@ GitHub（自分の Fork したリポジトリ）
 ┌─────────────────────┐
 │   GitHub Pages      │  ← 公開URLでサイトが見られる
 └─────────────────────┘
-   https://<ユーザー名>.github.io/AWS-HANDSON-FOR-LEARNER/
+   https://<ユーザー名>.github.io/aws-handson-for-internship/
 ```
 
 ---
@@ -36,14 +36,18 @@ GitHub（自分の Fork したリポジトリ）
 
 ---
 
-## Step 1 — GitHub Pages について
+## Step 1 — GitHub Pages を有効にする（最初に1回だけ）
 
-GitHub Pages の有効化は、**ワークフローが初回実行時に自動で行います**（`enablement: true`）。
-通常は手動設定は不要です。次の Step に進んでください。
+自動公開を動かす前に、**自分の Fork したリポジトリ**で GitHub Pages を有効にします。
 
-> 🛠️ もし `Get Pages site failed` などのエラーが出た場合のみ、手動で設定します：
-> **「Settings」→「Pages」→「Build and deployment」→「Source」** で **「GitHub Actions」** を選択。
-> （「Deploy from a branch」ではなく **「GitHub Actions」** を選びます）
+1. リポジトリの **「Settings」** タブを開く
+2. 左メニュー **「Pages」** をクリック
+3. **「Build and deployment」→「Source」** で **「GitHub Actions」** を選択
+
+> 「Deploy from a branch」ではなく **「GitHub Actions」** を選ぶのがポイントです。
+> この設定をしないと、初回のワークフローが `Create Pages site failed`（権限エラー）で失敗します。
+> （ワークフローにも自動有効化の設定を入れていますが、Fork したリポジトリでは
+> 権限の都合で自動有効化できないため、この手動設定が必要です）
 
 ---
 
@@ -105,7 +109,7 @@ git push origin master
 4. **「Settings」→「Pages」** に表示される公開URLを開く：
 
 ```
-https://<自分のユーザー名>.github.io/AWS-HANDSON-FOR-LEARNER/
+https://<自分のユーザー名>.github.io/aws-handson-for-internship/
 ```
 
 自分が編集した内容がインターネット上で見られれば完成です 🎉
