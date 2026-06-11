@@ -1,0 +1,32 @@
+{
+  // GitHub Codespaces / VS Code Dev Containers の標準環境設定
+  // この設定により、Codespace 起動時に Python・ポート転送・拡張機能が自動でそろいます。
+  "name": "DXC インターンシッププログラム",
+
+  // Python 3.12 入りの公式イメージ（http.server を動かすため）
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
+
+  // ローカルサーバー用のポートを自動転送する
+  "forwardPorts": [8000, 8080],
+  "portsAttributes": {
+    "8000": {
+      "label": "Webサイト (http.server)",
+      "onAutoForward": "openBrowser"
+    },
+    "8080": {
+      "label": "Webサイト (代替ポート)",
+      "onAutoForward": "openBrowser"
+    }
+  },
+
+  "customizations": {
+    "vscode": {
+      // 起動時に入っていると便利な拡張機能
+      "extensions": [
+        "ms-python.python",
+        "esbenp.prettier-vscode",
+        "ritwickdey.LiveServer"
+      ]
+    }
+  }
+}

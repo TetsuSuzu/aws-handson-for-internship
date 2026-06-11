@@ -1,20 +1,8 @@
-# Session0/Session1/Session2とREADMEのみをpush対象にする
-*
-!.gitignore
-!README.md
-!CONTRIBUTING.md
-!.github/
-!.github/**
-!Session0/
-!Session0/**
-!Session1/
-!Session1/**
-!Session2/
-!Session2/**
-!Session3/
-!Session3/**
-!Session4/
-!Session4/**
+# Python 仮想環境・キャッシュ
+.venv/
+__pycache__/
+*.pyc
 
-# Session2の仮想環境を除外
-Session2/.venv/
+# OS / エディタが作る一時ファイル
+.DS_Store
+Thumbs.db
