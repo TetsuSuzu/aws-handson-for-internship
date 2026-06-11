@@ -36,13 +36,14 @@ GitHub（自分の Fork したリポジトリ）
 
 ---
 
-## Step 1 — GitHub Pages を有効にする
+## Step 1 — GitHub Pages について
 
-1. 自分の Fork したリポジトリの **「Settings」** タブを開く
-2. 左メニュー **「Pages」** をクリック
-3. **「Build and deployment」→「Source」** で **「GitHub Actions」** を選択
+GitHub Pages の有効化は、**ワークフローが初回実行時に自動で行います**（`enablement: true`）。
+通常は手動設定は不要です。次の Step に進んでください。
 
-> 「Deploy from a branch」ではなく **「GitHub Actions」** を選ぶのがポイントです。
+> 🛠️ もし `Get Pages site failed` などのエラーが出た場合のみ、手動で設定します：
+> **「Settings」→「Pages」→「Build and deployment」→「Source」** で **「GitHub Actions」** を選択。
+> （「Deploy from a branch」ではなく **「GitHub Actions」** を選びます）
 
 ---
 
@@ -65,6 +66,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true         # Pages が未設定なら自動で有効化
       - uses: actions/upload-pages-artifact@v3
         with:
           path: web                 # web/ フォルダを公開
