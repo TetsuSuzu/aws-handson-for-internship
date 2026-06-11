@@ -8,6 +8,20 @@ GitHub と GitHub Actions を使って、**ブラウザだけ**で Web サイト
 
 ---
 
+## ⚡ クイックスタート（Codespaces ワンクリック起動）
+
+下のボタンから、ブラウザ上の開発環境（GitHub Codespaces）をすぐ起動できます。
+Python・ポート転送・拡張機能はあらかじめ設定済みです（[.devcontainer/](.devcontainer/devcontainer.json)）。
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/TetsuSuzu/aws-handson-for-internship?quickstart=1)
+
+> 💡 **受講生は、まず自分のアカウントに Fork してから起動してください。**
+> Fork 後は **自分のリポジトリの「Code」→「Codespaces」** から起動すると、
+> 編集内容を自分のリポジトリに push でき、GitHub Pages での公開（Session4）まで進められます。
+> 上のボタンは事務局リポジトリをそのまま試す用です。詳しい手順は [Session0](Session0/README.md) を参照。
+
+---
+
 ## このハンズオンで学べること
 
 | テーマ | 内容 |

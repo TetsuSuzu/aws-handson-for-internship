@@ -49,6 +49,14 @@ PC に VS Code・Python・Git を **インストールする必要はありま�
 > ⏳ 初回の起動は1〜2分かかります。
 > 2回目以降は「Code」→「Codespaces」タブから、前回の Codespace を再開できます。
 
+> ⚙️ この Codespace には、Python・ポート転送（8000/8080）・便利な拡張機能が
+> あらかじめ設定されています（リポジトリの [.devcontainer/](../.devcontainer/devcontainer.json)）。
+> セットアップ作業は不要で、すぐに Step 4 のサーバー起動に進めます。
+
+> 🔁 README の **「Codespaces で開く」ボタン** からも起動できますが、
+> 受講生は **必ず自分が Fork したリポジトリ**（Step 2）から起動してください
+> （自分のリポジトリに push でき、Session4 の公開まで進めるため）。
+
 ### 💡 Codespaces とは
 
 GitHub が用意するクラウド上の開発環境です。みなさんの Fork したリポジトリが
